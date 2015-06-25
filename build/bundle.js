@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/develop/my_flux";
+/******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -55,7 +55,7 @@
 	var demo = new Vue({
 	  el: '#demo',
 	  data: {
-	    message: 'o Vue.'
+	    message: 'Hello Vue'
 	  }
 	});
 

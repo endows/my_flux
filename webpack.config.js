@@ -1,11 +1,10 @@
 webpack = require('webpack')
 module.exports = {
   entry: {
-    app: ["./main.js"]
+    app: ["./src/main.js"]
   },
   output: {
-    path: __dirname,
-    publicPath: __dirname,
+    path: './build',
     filename: 'bundle.js'
   },
   plugins: []
