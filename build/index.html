@@ -1,8 +1,13 @@
 <body>
   <div id="demo">
     <div>{{count}}</div>
-    <input v-model="count">
+    <input v-model="new_tag">
+    <button v-on="click: submit(e)">Submit</button>
+    <li v-repeat="tags">
+      {{name}}
+    </li>
   </div>
+
 </body>
 
 <script src="bundle.js"></script>

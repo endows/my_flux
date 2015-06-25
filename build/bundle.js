@@ -52,23 +52,22 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var Vue = __webpack_require__(2);
+	var Sync = __webpack_require__(67)
 	var demo = new Vue({
 	  el: '#demo',
 	  data: {
-	    count: 1
+	    new_tag: '',
+	    tags: []
 	  },
-	  methods:{
-	    inc:function(){
-	      this.count ++
+	  methods: {
+	    submit:function(e) {
+	      this.tags.push(this.new_tag)
+	      this.new_tag = ''
 	    }
 	  }
 	});
 
-	setInterval(function(){
-	  // demo.inc()
-	  demo.count = demo.count + 1
-	  console.log('plued')
-	},1000)
+	demo.tags = new Sync('/tags')
 
 
 /***/ },
@@ -9570,6 +9569,19 @@
 	exports.$compile = function (el, host) {
 	  return compiler.compile(el, this.$options, true, host)(this, el)
 	}
+
+/***/ },
+/* 67 */
+/***/ function(module, exports) {
+
+	module.exports = function(){
+	  data = {
+	    '1':{name:'Node.js'},
+	    '2':{name:'Ruby'}
+	  }
+	  return data
+	}
+
 
 /***/ }
 /******/ ]);
