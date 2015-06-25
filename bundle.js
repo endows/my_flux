@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/develop/my_flux";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -44,20 +44,27 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Vue = __webpack_require__(1);
-	var demo = new Vue({
-	  el: '#demo',
-	  data: {
-	    message: 'Hello Vue.js!'
-	  }
-	});
+	module.exports = __webpack_require__(1);
 
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var Vue = __webpack_require__(2);
+	var demo = new Vue({
+	  el: '#demo',
+	  data: {
+	    message: 'o Vue.'
+	  }
+	});
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(3)
 	var extend = _.extend
 
 	/**
@@ -82,7 +89,7 @@
 	 * Mixin global API
 	 */
 
-	extend(Vue, __webpack_require__(10))
+	extend(Vue, __webpack_require__(11))
 
 	/**
 	 * Vue and every constructor that extends Vue has an
@@ -95,9 +102,9 @@
 
 	Vue.options = {
 	  replace: true,
-	  directives: __webpack_require__(28),
-	  elementDirectives: __webpack_require__(50),
-	  filters: __webpack_require__(53),
+	  directives: __webpack_require__(29),
+	  elementDirectives: __webpack_require__(51),
+	  filters: __webpack_require__(54),
 	  transitions: {},
 	  components: {},
 	  partials: {}
@@ -129,45 +136,45 @@
 	 * Mixin internal instance methods
 	 */
 
-	extend(p, __webpack_require__(55))
 	extend(p, __webpack_require__(56))
 	extend(p, __webpack_require__(57))
 	extend(p, __webpack_require__(58))
-	extend(p, __webpack_require__(60))
+	extend(p, __webpack_require__(59))
+	extend(p, __webpack_require__(61))
 
 	/**
 	 * Mixin public API methods
 	 */
 
-	extend(p, __webpack_require__(61))
 	extend(p, __webpack_require__(62))
 	extend(p, __webpack_require__(63))
 	extend(p, __webpack_require__(64))
 	extend(p, __webpack_require__(65))
+	extend(p, __webpack_require__(66))
 
 	module.exports = _.Vue = Vue
 
 
 /***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var lang   = __webpack_require__(5)
-	var extend = lang.extend
-
-	extend(exports, lang)
-	extend(exports, __webpack_require__(6))
-	extend(exports, __webpack_require__(7))
-	extend(exports, __webpack_require__(3))
-	extend(exports, __webpack_require__(8))
-	extend(exports, __webpack_require__(9))
-
-/***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
+	var lang   = __webpack_require__(6)
+	var extend = lang.extend
+
+	extend(exports, lang)
+	extend(exports, __webpack_require__(7))
+	extend(exports, __webpack_require__(8))
+	extend(exports, __webpack_require__(4))
+	extend(exports, __webpack_require__(9))
+	extend(exports, __webpack_require__(10))
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
 
 	/**
 	 * Assert whether a prop is valid.
@@ -296,7 +303,7 @@
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -417,7 +424,7 @@
 
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/**
@@ -705,7 +712,7 @@
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	// can we use __proto__?
@@ -795,10 +802,10 @@
 	})()
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var config = __webpack_require__(4)
+	var config = __webpack_require__(5)
 
 	/**
 	 * Check if a node is in the document.
@@ -1017,10 +1024,10 @@
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var config = __webpack_require__(4)
+	var config = __webpack_require__(5)
 
 	/**
 	 * Enable debug utilities. The enableDebug() function and
@@ -1093,10 +1100,10 @@
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 	var extend = _.extend
 
 	/**
@@ -1386,11 +1393,11 @@
 
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
 
 	/**
 	 * Expose useful internals
@@ -1398,15 +1405,15 @@
 
 	exports.util = _
 	exports.nextTick = _.nextTick
-	exports.config = __webpack_require__(4)
-	exports.compiler = __webpack_require__(11)
+	exports.config = __webpack_require__(5)
+	exports.compiler = __webpack_require__(12)
 
 	exports.parsers = {
-	  path: __webpack_require__(24),
-	  text: __webpack_require__(15),
-	  template: __webpack_require__(13),
-	  directive: __webpack_require__(16),
-	  expression: __webpack_require__(23)
+	  path: __webpack_require__(25),
+	  text: __webpack_require__(16),
+	  template: __webpack_require__(14),
+	  directive: __webpack_require__(17),
+	  expression: __webpack_require__(24)
 	}
 
 	/**
@@ -1531,29 +1538,29 @@
 
 
 /***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var _ = __webpack_require__(2)
-
-	_.extend(exports, __webpack_require__(12))
-	_.extend(exports, __webpack_require__(27))
-
-/***/ },
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
-	var textParser = __webpack_require__(15)
-	var dirParser = __webpack_require__(16)
-	var templateParser = __webpack_require__(13)
+	var _ = __webpack_require__(3)
+
+	_.extend(exports, __webpack_require__(13))
+	_.extend(exports, __webpack_require__(28))
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
+	var textParser = __webpack_require__(16)
+	var dirParser = __webpack_require__(17)
+	var templateParser = __webpack_require__(14)
 	var resolveAsset = _.resolveAsset
 	var propBindingModes = config._propBindingModes
 
 	// internal directives
-	var propDef = __webpack_require__(17)
-	var componentDef = __webpack_require__(26)
+	var propDef = __webpack_require__(18)
+	var componentDef = __webpack_require__(27)
 
 	// terminal directives
 	var terminalDirectives = [
@@ -1965,7 +1972,7 @@
 	var dataAttrRE = /^data-/
 	var settablePathRE = /^[A-Za-z_$][\w$]*(\.[A-Za-z_$][\w$]*|\[[^\[\]]+\])*$/
 	var literalValueRE = /^(true|false)$|^\d.*/
-	var identRE = __webpack_require__(24).identRE
+	var identRE = __webpack_require__(25).identRE
 
 	function compileProps (el, propDescriptors) {
 	  var props = []
@@ -2331,11 +2338,11 @@
 
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Cache = __webpack_require__(14)
+	var _ = __webpack_require__(3)
+	var Cache = __webpack_require__(15)
 	var templateCache = new Cache(1000)
 	var idSelectorCache = new Cache(1000)
 
@@ -2595,7 +2602,7 @@
 	}
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/**
@@ -2712,12 +2719,12 @@
 	module.exports = Cache
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Cache = __webpack_require__(14)
-	var config = __webpack_require__(4)
-	var dirParser = __webpack_require__(16)
+	var Cache = __webpack_require__(15)
+	var config = __webpack_require__(5)
+	var dirParser = __webpack_require__(17)
 	var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g
 	var cache, tagRE, htmlRE, firstChar, lastChar
 
@@ -2893,11 +2900,11 @@
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Cache = __webpack_require__(14)
+	var _ = __webpack_require__(3)
+	var Cache = __webpack_require__(15)
 	var cache = new Cache(1000)
 	var argRE = /^[^\{\?]+$|^'[^']*'$|^"[^"]*"$/
 	var filterTokenRE = /[^\s'"]+|'[^']+'|"[^"]+"/g
@@ -3077,7 +3084,7 @@
 	}
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// NOTE: the prop internal directive is compiled and linked
@@ -3085,9 +3092,9 @@
 	// The purpose is to make the initial prop values available
 	// inside `created` hooks and `data` functions.
 
-	var _ = __webpack_require__(2)
-	var Watcher = __webpack_require__(18)
-	var bindingModes = __webpack_require__(4)._propBindingModes
+	var _ = __webpack_require__(3)
+	var Watcher = __webpack_require__(19)
+	var bindingModes = __webpack_require__(5)._propBindingModes
 
 	module.exports = {
 
@@ -3168,14 +3175,14 @@
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
-	var Observer = __webpack_require__(19)
-	var expParser = __webpack_require__(23)
-	var batcher = __webpack_require__(25)
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
+	var Observer = __webpack_require__(20)
+	var expParser = __webpack_require__(24)
+	var batcher = __webpack_require__(26)
 	var uid = 0
 
 	/**
@@ -3411,15 +3418,15 @@
 
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
-	var Dep = __webpack_require__(20)
-	var arrayMethods = __webpack_require__(21)
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
+	var Dep = __webpack_require__(21)
+	var arrayMethods = __webpack_require__(22)
 	var arrayKeys = Object.getOwnPropertyNames(arrayMethods)
-	__webpack_require__(22)
+	__webpack_require__(23)
 
 	var uid = 0
 
@@ -3663,10 +3670,10 @@
 
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	/**
 	 * A dep is an observable that can have multiple
@@ -3732,10 +3739,10 @@
 
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 	var arrayProto = Array.prototype
 	var arrayMethods = Object.create(arrayProto)
 
@@ -3829,10 +3836,10 @@
 	module.exports = arrayMethods
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 	var objProto = Object.prototype
 
 	/**
@@ -3916,12 +3923,12 @@
 	)
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Path = __webpack_require__(24)
-	var Cache = __webpack_require__(14)
+	var _ = __webpack_require__(3)
+	var Path = __webpack_require__(25)
+	var Cache = __webpack_require__(15)
 	var expressionCache = new Cache(1000)
 
 	var allowedKeywords =
@@ -4184,11 +4191,11 @@
 	}
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Cache = __webpack_require__(14)
+	var _ = __webpack_require__(3)
+	var Cache = __webpack_require__(15)
 	var pathCache = new Cache(1000)
 	var identRE = exports.identRE = /^[$_a-zA-Z]+[\w$]*$/
 
@@ -4515,11 +4522,11 @@
 
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
 
 	// we have two separate queues: one for directive updates
 	// and one for user watcher registered via $watch().
@@ -4616,11 +4623,11 @@
 
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var templateParser = __webpack_require__(13)
+	var _ = __webpack_require__(3)
+	var templateParser = __webpack_require__(14)
 
 	module.exports = {
 
@@ -4919,12 +4926,12 @@
 
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
-	var templateParser = __webpack_require__(13)
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
+	var templateParser = __webpack_require__(14)
 
 	/**
 	 * Process an element or a DocumentFragment based on a
@@ -5059,39 +5066,39 @@
 
 
 /***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// manipulation directives
-	exports.text       = __webpack_require__(30)
-	exports.html       = __webpack_require__(31)
-	exports.attr       = __webpack_require__(32)
-	exports.show       = __webpack_require__(33)
-	exports['class']   = __webpack_require__(35)
-	exports.el         = __webpack_require__(36)
-	exports.ref        = __webpack_require__(37)
-	exports.cloak      = __webpack_require__(38)
-	exports.style      = __webpack_require__(29)
-	exports.transition = __webpack_require__(39)
-
-	// event listener directives
-	exports.on         = __webpack_require__(42)
-	exports.model      = __webpack_require__(43)
-
-	// logic control directives
-	exports.repeat     = __webpack_require__(48)
-	exports['if']      = __webpack_require__(49)
-
-	// internal directives that should not be used directly
-	// but we still want to expose them for advanced usage.
-	exports._component = __webpack_require__(26)
-	exports._prop      = __webpack_require__(17)
-
-/***/ },
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	// manipulation directives
+	exports.text       = __webpack_require__(31)
+	exports.html       = __webpack_require__(32)
+	exports.attr       = __webpack_require__(33)
+	exports.show       = __webpack_require__(34)
+	exports['class']   = __webpack_require__(36)
+	exports.el         = __webpack_require__(37)
+	exports.ref        = __webpack_require__(38)
+	exports.cloak      = __webpack_require__(39)
+	exports.style      = __webpack_require__(30)
+	exports.transition = __webpack_require__(40)
+
+	// event listener directives
+	exports.on         = __webpack_require__(43)
+	exports.model      = __webpack_require__(44)
+
+	// logic control directives
+	exports.repeat     = __webpack_require__(49)
+	exports['if']      = __webpack_require__(50)
+
+	// internal directives that should not be used directly
+	// but we still want to expose them for advanced usage.
+	exports._component = __webpack_require__(27)
+	exports._prop      = __webpack_require__(18)
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(3)
 	var prefixes = ['-webkit-', '-moz-', '-ms-']
 	var camelPrefixes = ['Webkit', 'Moz', 'ms']
 	var importantRE = /!important;?$/
@@ -5203,10 +5210,10 @@
 	}
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	module.exports = {
 
@@ -5223,11 +5230,11 @@
 	}
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var templateParser = __webpack_require__(13)
+	var _ = __webpack_require__(3)
+	var templateParser = __webpack_require__(14)
 
 	module.exports = {
 
@@ -5269,7 +5276,7 @@
 	}
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 	// xlink
@@ -5324,10 +5331,10 @@
 
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var transition = __webpack_require__(34)
+	var transition = __webpack_require__(35)
 
 	module.exports = function (value) {
 	  var el = this.el
@@ -5337,10 +5344,10 @@
 	}
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	/**
 	 * Append with transition.
@@ -5470,10 +5477,10 @@
 	}
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 	var addClass = _.addClass
 	var removeClass = _.removeClass
 
@@ -5520,7 +5527,7 @@
 	}
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -5538,10 +5545,10 @@
 	}
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	module.exports = {
 
@@ -5566,10 +5573,10 @@
 	}
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var config = __webpack_require__(4)
+	var config = __webpack_require__(5)
 
 	module.exports = {
 
@@ -5583,11 +5590,11 @@
 	}
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Transition = __webpack_require__(40)
+	var _ = __webpack_require__(3)
+	var Transition = __webpack_require__(41)
 
 	module.exports = {
 
@@ -5615,11 +5622,11 @@
 	}
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var queue = __webpack_require__(41)
+	var _ = __webpack_require__(3)
+	var queue = __webpack_require__(42)
 	var addClass = _.addClass
 	var removeClass = _.removeClass
 	var transitionEndEvent = _.transitionEndEvent
@@ -5928,10 +5935,10 @@
 	module.exports = Transition
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 	var queue = []
 	var queued = false
 
@@ -5968,10 +5975,10 @@
 	}
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	module.exports = {
 
@@ -6032,16 +6039,16 @@
 	}
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	var handlers = {
-	  text: __webpack_require__(44),
-	  radio: __webpack_require__(45),
-	  select: __webpack_require__(46),
-	  checkbox: __webpack_require__(47)
+	  text: __webpack_require__(45),
+	  radio: __webpack_require__(46),
+	  select: __webpack_require__(47),
+	  checkbox: __webpack_require__(48)
 	}
 
 	module.exports = {
@@ -6112,10 +6119,10 @@
 	}
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	module.exports = {
 
@@ -6276,10 +6283,10 @@
 	}
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	module.exports = {
 
@@ -6307,12 +6314,12 @@
 	}
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Watcher = __webpack_require__(18)
-	var dirParser = __webpack_require__(16)
+	var _ = __webpack_require__(3)
+	var Watcher = __webpack_require__(19)
+	var dirParser = __webpack_require__(17)
 
 	module.exports = {
 
@@ -6498,10 +6505,10 @@
 	}
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	module.exports = {
 
@@ -6528,16 +6535,16 @@
 	}
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 	var isObject = _.isObject
 	var isPlainObject = _.isPlainObject
-	var textParser = __webpack_require__(15)
-	var expParser = __webpack_require__(23)
-	var templateParser = __webpack_require__(13)
-	var compiler = __webpack_require__(11)
+	var textParser = __webpack_require__(16)
+	var expParser = __webpack_require__(24)
+	var templateParser = __webpack_require__(14)
+	var compiler = __webpack_require__(12)
 	var uid = 0
 
 	// async component resolution states
@@ -7258,13 +7265,13 @@
 
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var compiler = __webpack_require__(11)
-	var templateParser = __webpack_require__(13)
-	var transition = __webpack_require__(34)
+	var _ = __webpack_require__(3)
+	var compiler = __webpack_require__(12)
+	var templateParser = __webpack_require__(14)
+	var transition = __webpack_require__(35)
 
 	module.exports = {
 
@@ -7391,18 +7398,18 @@
 
 
 /***/ },
-/* 50 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports.content = __webpack_require__(51)
-	exports.partial = __webpack_require__(52)
-
-
-/***/ },
 /* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	exports.content = __webpack_require__(52)
+	exports.partial = __webpack_require__(53)
+
+
+/***/ },
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var _ = __webpack_require__(3)
 
 	// This is the elementDirective that handles <content>
 	// transclusions. It relies on the raw content of an
@@ -7516,18 +7523,18 @@
 
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var templateParser = __webpack_require__(13)
-	var textParser = __webpack_require__(15)
-	var compiler = __webpack_require__(11)
-	var Cache = __webpack_require__(14)
+	var _ = __webpack_require__(3)
+	var templateParser = __webpack_require__(14)
+	var textParser = __webpack_require__(16)
+	var compiler = __webpack_require__(12)
+	var Cache = __webpack_require__(15)
 	var cache = new Cache(1000)
 
 	// v-partial reuses logic from v-if
-	var vIf = __webpack_require__(49)
+	var vIf = __webpack_require__(50)
 
 	module.exports = {
 
@@ -7593,10 +7600,10 @@
 
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	/**
 	 * Stringify value.
@@ -7732,15 +7739,15 @@
 	 * Install special array filters
 	 */
 
-	_.extend(exports, __webpack_require__(54))
+	_.extend(exports, __webpack_require__(55))
 
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Path = __webpack_require__(24)
+	var _ = __webpack_require__(3)
+	var Path = __webpack_require__(25)
 
 	/**
 	 * Filter filter for v-repeat
@@ -7828,10 +7835,10 @@
 
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var mergeOptions = __webpack_require__(2).mergeOptions
+	var mergeOptions = __webpack_require__(3).mergeOptions
 
 	/**
 	 * The main init sequence. This is called for every
@@ -7927,10 +7934,10 @@
 
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 	var inDoc = _.inDoc
 
 	/**
@@ -8070,13 +8077,13 @@
 	}
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var compiler = __webpack_require__(11)
-	var Observer = __webpack_require__(19)
-	var Dep = __webpack_require__(20)
+	var _ = __webpack_require__(3)
+	var compiler = __webpack_require__(12)
+	var Observer = __webpack_require__(20)
+	var Dep = __webpack_require__(21)
 
 	/**
 	 * Setup the scope of an instance, which contains:
@@ -8338,12 +8345,12 @@
 
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var Directive = __webpack_require__(59)
-	var compiler = __webpack_require__(11)
+	var _ = __webpack_require__(3)
+	var Directive = __webpack_require__(60)
+	var compiler = __webpack_require__(12)
 
 	/**
 	 * Transclude, compile and link element.
@@ -8536,14 +8543,14 @@
 
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var config = __webpack_require__(4)
-	var Watcher = __webpack_require__(18)
-	var textParser = __webpack_require__(15)
-	var expParser = __webpack_require__(23)
+	var _ = __webpack_require__(3)
+	var config = __webpack_require__(5)
+	var Watcher = __webpack_require__(19)
+	var textParser = __webpack_require__(16)
+	var expParser = __webpack_require__(24)
 
 	/**
 	 * A directive links a DOM element with a piece of data,
@@ -8761,10 +8768,10 @@
 	module.exports = Directive
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	/**
 	 * Apply a list of filter (descriptors) to a value.
@@ -8853,14 +8860,14 @@
 
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Watcher = __webpack_require__(18)
-	var Path = __webpack_require__(24)
-	var textParser = __webpack_require__(15)
-	var dirParser = __webpack_require__(16)
-	var expParser = __webpack_require__(23)
+	var Watcher = __webpack_require__(19)
+	var Path = __webpack_require__(25)
+	var textParser = __webpack_require__(16)
+	var dirParser = __webpack_require__(17)
+	var expParser = __webpack_require__(24)
 	var filterRE = /[^|]\|[^|]/
 
 	/**
@@ -9013,11 +9020,11 @@
 
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var transition = __webpack_require__(34)
+	var _ = __webpack_require__(3)
+	var transition = __webpack_require__(35)
 
 	/**
 	 * Convenience on-instance nextTick. The callback is
@@ -9245,10 +9252,10 @@
 
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	/**
 	 * Listen on the given `event` with `fn`.
@@ -9424,10 +9431,10 @@
 	}
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
+	var _ = __webpack_require__(3)
 
 	/**
 	 * Create a child instance that prototypally inehrits
@@ -9476,11 +9483,11 @@
 	}
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(2)
-	var compiler = __webpack_require__(11)
+	var _ = __webpack_require__(3)
+	var compiler = __webpack_require__(12)
 
 	/**
 	 * Set instance target element and kick off the compilation
