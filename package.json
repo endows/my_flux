@@ -11,11 +11,14 @@
     "webpack-reload-plugin": "^0.1.2"
   },
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-run": "^1.6.8",
+    "gulp-shell": "^0.4.2",
     "html-webpack-plugin": "^1.5.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "live-server build || webpack --watch"
+    "dev": "live-server build & webpack --watch"
   },
   "author": "",
   "license": "ISC"
