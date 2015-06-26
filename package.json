@@ -4,6 +4,8 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "express": "^4.13.0",
+    "jquery": "^2.1.4",
     "node-libs-browser": "^0.5.2",
     "vue": "^0.12.3",
     "webpack": "^1.9.12",

@@ -1,3 +1,6 @@
+window.$ = require('jquery')
+
+
 module.exports = function(){
   data = {
     '1':{name:'Node.js'},
