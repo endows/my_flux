@@ -61,7 +61,8 @@
 	  },
 	  methods: {
 	    submit:function(e) {
-	      this.tags.push(this.new_tag)
+	      var send_data = {name:this.new_tag}
+	      $.post('http://localhost:3000/tags',send_data)
 	      this.new_tag = ''
 	    }
 	  }
@@ -9574,18 +9575,16 @@
 /* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var data = {}
+
 	window.$ = __webpack_require__(68)
 	var se = new EventSource("http://localhost:3000/tags");
-	se.onmessage = function(e){
-	  data = JSON.parse(e.data)
-	  console.log(data)
+	se.onmessage = function(e) {
+	  var _data = JSON.parse(e.data)
+	  for (var attr in _data) { data[attr] = _data[attr]; }
 	}
 
-	module.exports = function(){
-	  data = {
-	    '1':{name:'Node.js'},
-	    '2':{name:'Ruby'}
-	  }
+	module.exports = function() {
 	  return data
 	}
 

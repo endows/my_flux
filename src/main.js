@@ -8,7 +8,8 @@ var demo = new Vue({
   },
   methods: {
     submit:function(e) {
-      this.tags.push(this.new_tag)
+      var send_data = {name:this.new_tag}
+      $.post('http://localhost:3000/tags',send_data)
       this.new_tag = ''
     }
   }

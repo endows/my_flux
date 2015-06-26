@@ -1,3 +1,6 @@
+var EventEmitter = require('events').EventEmitter;
+var ev = new EventEmitter;
+
 var express = require('express'),
   cors = require('cors'),
   bodyParser = require("body-parser"),
@@ -17,11 +20,15 @@ collections.tags = {
   }
 }
 
+
+
+
 app.post('/:collection',function(req, res) {
   id = Date.now()
   data = req.body
   data.id = id
   collections[req.params.collection][id] = data
+  ev.emit('tags',data)
   res.send('true')
 })
 
@@ -35,6 +42,10 @@ app.get('/:collection', function(req, res) {
   res.write('\n')
   var send_data = JSON.stringify(collections[req.params.collection])
   res.write('data: ' + send_data + ' \n\n')
+  ev.on('tags',function(obj){
+    var send_data = JSON.stringify(obj)
+    res.write('data: ' + send_data + ' \n\n')
+  })
 })
 
 app.get('/:collection/:id', function(req, res) {
