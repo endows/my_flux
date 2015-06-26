@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "body-parser": "^1.13.1",
     "express": "^4.13.0",
     "jquery": "^2.1.4",
     "node-libs-browser": "^0.5.2",

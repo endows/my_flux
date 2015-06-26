@@ -1,15 +1,29 @@
 var express = require('express'),
   cors = require('cors'),
+  bodyParser = require("body-parser"),
   app = express();
 
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 var collections = {}
 
 collections.tags = {
-  '1':{name:'Python'},
-  '2':{name:'Ruby'}
+  '1': {
+    name: 'Python'
+  },
+  '2': {
+    name: 'Ruby'
+  }
 }
+
+app.post('/:collection',function(req, res) {
+  id = Date.now()
+  data = req.body
+  data.id = id
+  collections[req.params.collection][id] = data
+  res.send('true')
+})
 
 app.get('/:collection', function(req, res) {
   res.writeHead(200, {
